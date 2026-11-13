@@ -1,0 +1,5 @@
+prefix: "&8[&bWeedLib&8] &7"
+modules:
+  items: true
+  placeholders: true
+  animations: true

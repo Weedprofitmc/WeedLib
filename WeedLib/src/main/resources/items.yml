@@ -1,0 +1,6 @@
+# Model registry for dependent plugins / resource-pack integration.
+models:
+  example_sword:
+    material: DIAMOND_SWORD
+    custom-model-data: 10001
+    itemsadder-id: "namespace:example_sword"

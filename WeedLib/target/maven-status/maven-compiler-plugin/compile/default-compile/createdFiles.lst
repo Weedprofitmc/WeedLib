@@ -1,0 +1,6 @@
+dev\weedlib\api\WeedLibAPI.class
+dev\weedlib\animation\ItemAnimation.class
+dev\weedlib\command\WeedLibCommand.class
+dev\weedlib\item\ItemService.class
+dev\weedlib\placeholder\WeedPlaceholderExpansion.class
+dev\weedlib\WeedLib.class
