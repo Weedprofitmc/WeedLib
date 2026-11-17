@@ -114,5 +114,23 @@ public final class ItemService {
         if(item==null || !item.hasItemMeta()) return item;
         ItemMeta meta=item.getItemMeta(); meta.getPersistentDataContainer().remove(key(key)); item.setItemMeta(meta); return item;
     }
+    public ItemStack setBooleanTag(ItemStack item, String key, boolean value) {
+        ensureEnabled(); ItemMeta meta=item.getItemMeta();
+        meta.getPersistentDataContainer().set(key(key), PersistentDataType.BYTE, (byte)(value?1:0));
+        item.setItemMeta(meta); return item;
+    }
+    public Boolean getBooleanTag(ItemStack item, String key) {
+        if(item==null||!item.hasItemMeta())return null;
+        Byte value=item.getItemMeta().getPersistentDataContainer().get(key(key),PersistentDataType.BYTE);
+        return value==null?null:value!=0;
+    }
+    public ItemStack setUuidTag(ItemStack item,String key,java.util.UUID value) {
+        if(value==null)throw new IllegalArgumentException("UUID cannot be null");
+        return setStringTag(item,key,value.toString());
+    }
+    public java.util.UUID getUuidTag(ItemStack item,String key) {
+        String value=getStringTag(item,key);if(value==null)return null;
+        try{return java.util.UUID.fromString(value);}catch(IllegalArgumentException ignored){return null;}
+    }
     private NamespacedKey key(String key) { return new NamespacedKey(plugin, key.toLowerCase(java.util.Locale.ROOT)); }
 }

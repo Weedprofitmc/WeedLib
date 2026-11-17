@@ -18,6 +18,11 @@ public final class WeedPlaceholderExpansion extends PlaceholderExpansion {
    case "online" -> Integer.toString(plugin.getServer().getOnlinePlayers().size());
    case "max_players" -> Integer.toString(plugin.getServer().getMaxPlayers());
    case "ping" -> player==null?"":Integer.toString(player.getPing());
+   case "version" -> plugin.getDescription().getVersion();
+   case "core_version" -> {
+    org.bukkit.plugin.Plugin core = plugin.getServer().getPluginManager().getPlugin("WeedCore");
+    yield core == null ? "not_installed" : core.getDescription().getVersion();
+   }
    default -> null;
   };
  }

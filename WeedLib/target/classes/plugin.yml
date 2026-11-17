@@ -1,10 +1,7 @@
 name: WeedLib
-version: 1.1.0
+version: 1.4.0
 main: dev.weedlib.WeedLib
 api-version: '1.21'
+author: Weed
+description: Shared reusable API library for Weed plugins
 softdepend: [ItemsAdder, PlaceholderAPI]
-description: Modular API library for Paper plugins
-commands:
-  weedlib:
-    description: WeedLib information
-    usage: /weedlib info
