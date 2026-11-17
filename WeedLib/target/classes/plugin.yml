@@ -1,7 +1,0 @@
-name: WeedLib
-version: 1.4.0
-main: dev.weedlib.WeedLib
-api-version: '1.21'
-author: Weed
-description: Shared reusable API library for Weed plugins
-softdepend: [ItemsAdder, PlaceholderAPI]
